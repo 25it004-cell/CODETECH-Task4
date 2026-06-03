@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning Management System</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#f4f4f4;
+            margin:0;
+            padding:0;
+        }
+
+        header{
+            background:#0077cc;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        .container{
+            width:60%;
+            margin:30px auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            text-align:center;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#28a745;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#218838;
+        }
+
+        #output{
+            margin-top:20px;
+            font-size:18px;
+            text-align:center;
+            color:#0077cc;
+        }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <h1>Learning Management System</h1>
+</header>
+
+<div class="container">
+
+    <h2>Student Course Registration</h2>
+
+    <input type="text" id="student"
+           placeholder="Enter Student Name">
+
+    <input type="text" id="course"
+           placeholder="Enter Course Name">
+
+    <button onclick="registerCourse()">
+        Register Course
+    </button>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+
+function registerCourse()
+{
+    let student =
+        document.getElementById("student").value;
+
+    let course =
+        document.getElementById("course").value;
+
+    if(student=="" || course=="")
+    {
+        document.getElementById("output").innerHTML =
+        "Please fill all fields";
+        return;
+    }
+
+    document.getElementById("output").innerHTML =
+    "<h3>Registration Successful</h3>" +
+    "Student Name: " + student + "<br>" +
+    "Course Name: " + course;
+}
+
+</script>
+
+</body>
+</html>
